@@ -6,6 +6,7 @@ public class PuzzleTest {
         System.out.println(test.letter());
         System.out.println(test.passWord());
         System.out.println(test.GetpassWord(3));
+        test.shiftarray();
 
     }
 }
