@@ -1,10 +1,10 @@
 package com.coding.survey.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coding.survey.models.Student;
@@ -29,5 +29,16 @@ public class APIController {
 		return this.sService.oneStudent(id);
 	}
 	//create a student
+	@PostMapping("/students/create")
+	private Student create(Student student){
+		return this.sService.createStudent(student);
+	}
+	
+	@DeleteMapping("students/delete/{id}")
+	private void delete(@PathVariable("id") Long id){
+		sService.deleteStudent(id);
+	}
+	
+	
 	//Delete a student
 }
